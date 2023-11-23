@@ -5,14 +5,15 @@ const initialUserInput = {
     'yearly-contribution': 1200,
     'expected-return': 7,
     'duration': 10,
-}
+};
 
-function Form() {
+function Form(props) {
     const [userInput, setUserInput] = useState(initialUserInput);
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log('Submitting form');
+
+        props.onCalculate(userInput);
     };
 
     const resetHandler = (e) => {
@@ -23,7 +24,7 @@ function Form() {
         setUserInput((prevInput) => {
             return {
                 ...prevInput,
-                [input]: value
+                [input]: +value
             };
         });
     };
