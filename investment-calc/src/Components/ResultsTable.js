@@ -30,7 +30,7 @@ function ResultsTable(props) {
                         <td>{formatter.format(props.initialInvestment +
                             yearData.yearlyContribution * yearData.year)}</td>
                     </tr>
-                ))};
+                ))}
             </tbody>
         </table>
     )
